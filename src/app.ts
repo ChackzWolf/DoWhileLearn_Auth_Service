@@ -24,16 +24,14 @@ app.use(errorHandler);
 
 
 const packatgeDefinition = protoLoader.loadSync(
-    path.join(__dirname, "/protos/auth.proto"), 
+    path.join(__dirname, "/Protos/auth.proto"), 
     {keepCase: true, longs: String, enums: String, defaults: true, oneofs: true}
 ) 
 
 
 const authProto = grpc.loadPackageDefinition(packatgeDefinition)as any;
-
 const server =  new grpc.Server()
 export const controller = new AuthController()
-
 
 const grpcServer = () => {
     server.bindAsync(
@@ -44,7 +42,7 @@ const grpcServer = () => {
                 console.log(err, "Error happened grpc user service.");
                 return;
             }else{
-                console.log("gRPC user server started on port", port);
+                console.log("AUTH_SERVICE running on port", port);
             }
         } 
     )
