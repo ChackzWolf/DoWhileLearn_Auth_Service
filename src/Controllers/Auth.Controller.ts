@@ -42,7 +42,7 @@ export class AuthController {
             console.log("Token validating...", data);
             const token = data.token || '';
             const decoded: any = jwt.verify(token, JWT_SECRET|| "NO_KEY" as Secret);
-            
+            console.log(decoded,'decoded decode')
             if (!decoded) {
                 console.log('decoded not found')
                 return { success: false, userId: null, role: null };

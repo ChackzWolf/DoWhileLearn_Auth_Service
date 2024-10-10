@@ -16,7 +16,7 @@ export class AuthService {
        
             // Verify the provided refresh token
             const decoded: any = jwt.verify(refreshtoken, REFRESH_TOKEN_SECRET || "NO_KEY" as Secret);
-            console.log("Token refreshed");
+            console.log("Token refreshed", decoded);
     
             // If the refresh token is invalid, handle the error gracefully
             if (!decoded) {
