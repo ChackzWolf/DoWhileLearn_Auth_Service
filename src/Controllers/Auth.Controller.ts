@@ -33,6 +33,8 @@ export class AuthController {
 
     isAuthenticated = async (call: grpc.ServerUnaryCall<any, any>, callback: grpc.sendUnaryData<any>):Promise<void> => { 
         try {
+            console.log(configs.JWT_SECRET , "JWT_SECRET///////////////")
+            console.log((configs.REFRESH_TOKEN_SECRET , "refresh token secret////////////"))
             const {accessToken ,  role} = call.request;
             console.log("Token validating...", call.request);
             const token = accessToken || '';
