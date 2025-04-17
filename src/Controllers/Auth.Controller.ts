@@ -30,7 +30,6 @@ export class AuthController {
         }
     }
 
-
     isAuthenticated = async (call: grpc.ServerUnaryCall<any, any>, callback: grpc.sendUnaryData<any>):Promise<void> => { 
         try {
             const {accessToken ,  role} = call.request;
@@ -45,5 +44,4 @@ export class AuthController {
             callback(null, {success:false, message: `An Error occured ${e}`})
         }
     }
-
 }
