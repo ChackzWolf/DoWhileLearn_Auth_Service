@@ -1,4 +1,4 @@
-import grpcServer from './app';
+import grpcServerStart from './grpc/grpc-server';
 
 
-grpcServer()
+grpcServerStart()
